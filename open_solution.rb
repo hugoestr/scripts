@@ -1,8 +1,8 @@
 projects = {
-  "egis_pivot" => 'C:\SVN\ARRA\PivotServer\pivot\PivotJitServer.sln',
-  "terrain_pivot" => 'C:\SVN\NRLTerrainRoot\pivot\PivotJitServer.sln',
-  "egis" => 'C:\SVN\ARRA\_Codebase\ArraMVC\ArraMVC.sln',
-  "terrain" => 'C:\SVN\NRLTerrainRoot\NRLTerrain\TerraSite.sln',
+  "egis_pivot" => 'C:\SVN\pivot\PivotJitServer.sln',
+  "terrain_pivot" => 'C:\pivot\PivotJitServer.sln',
+  "egis" => 'C:\SVN\ArraMVC.sln',
+  "terrain" => 'C:\SVN\TerraSite.sln',
 }
 
 key = ARGV[0]
