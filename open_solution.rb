@@ -1,13 +1,9 @@
-projects = {
-  "egis_pivot" => 'C:\SVN\pivot\PivotJitServer.sln',
-  "terrain_pivot" => 'C:\pivot\PivotJitServer.sln',
-  "egis" => 'C:\SVN\ArraMVC.sln',
-  "terrain" => 'C:\SVN\TerraSite.sln',
-}
+#!/usr/bin/env ruby
+require File.expand_path(File.dirname(__FILE__) + '/projects')
 
 key = ARGV[0]
-if key != nil && projects[key] != nil
-command = "start devenv.exe #{projects[key]}"
+if key != nil && Projects[key] != nil
+command = "start devenv.exe #{Projects[key]}"
   puts command
   system command
 else
