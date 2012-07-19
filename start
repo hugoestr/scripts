@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+
+require File.expand_path(File.dirname(__FILE__) + '/arguments')
+
+class Start 
+  def initialize(command_list, argument_list)
+    @commands = command_list
+    @arguments = argument_list
+
+  end
+
+  def run(arguments)
+    name, argument = arguments
+
+    if (!it_exists? name, @commands)
+      puts "command not known"
+      return
+    end
+
+    if (!it_exists? argument, @arguments)
+      puts "argument not known"
+      return
+    end
+
+    execute_command name, argument 
+  end
+
+  private
+
+  def it_exists?(key, collection)
+    result = false
+    
+    if key != nil && collection[key] != nil
+      result = true
+    end
+    
+    result
+  end
+
+
+  def execute_command(name, argument)
+    shell_command = "#{@commands[name]} #{@arguments[argument]}"
+    puts shell_command
+    system shell_command
+  end
+end
+
+
+main = Start.new Commands, Arguments
+main.run ARGV
+
+
