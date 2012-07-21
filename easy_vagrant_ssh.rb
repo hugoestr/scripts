@@ -39,7 +39,7 @@ def create_command(values)
 end
 
 def create_file(command)
-  file = File.open "vagrant_ssh1", "w"
+  file = File.open "vagrant_ssh", "w"
   file << command
 end
 

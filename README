@@ -1,3 +1,14 @@
 This is a collection of small scripts that I have written.
 Most of them deal with automation of frequent tasks.
 
+start  -- a utility that will start visual studio projects or window services. It combines the functionality of service_on.rb and open_solution.rb
+
+lamp_on.rb -- starts apache and mysql on windows 7
+
+service_on.rb -- starts a predefined windows service
+
+open_solution.rb -- opens a visual studio project
+
+easy_vagrant_ssh.rb -- It run vagrant ssh and creates a script from the error message that it returns when running it in windows. Usable when you run in cygwin with ssh installed an ruby is available.
+
+
