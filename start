@@ -17,12 +17,16 @@ class Start
       return
     end
 
-    if (!it_exists? argument, @arguments)
+    if (@commands[name][:type] != :object)  && (!it_exists? argument, @arguments)
       puts "argument not known"
       return
     end
 
-    execute_command name, argument 
+    if @commands[name][:type] == :shell
+      execute_command name, argument
+    else
+      execute name
+    end
   end
 
   private
@@ -37,9 +41,20 @@ class Start
     result
   end
 
+  def execute(name)
+    if @commands[name][:command] == :list
+      list
+    end
+  end
+
+  def list
+    @arguments.keys.each do |key|
+      puts key
+    end
+  end
 
   def execute_command(name, argument)
-    shell_command = "#{@commands[name]} #{@arguments[argument]}"
+    shell_command = "#{@commands[name][:command]} #{@arguments[argument]}"
     puts shell_command
     system shell_command
   end
